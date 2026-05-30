@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <TextView
+        android:id="@+id/mode_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/readout_bg"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="6dp"
+        android:text="@string/mode_torpedo"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:letterSpacing="0.08"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_settings"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/calibration_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calibration_active"
+        android:textColor="@color/bubble"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif-medium"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/btn_settings"
+        app:layout_constraintBottom_toBottomOf="@id/btn_settings"
+        app:layout_constraintEnd_toStartOf="@id/btn_settings"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:padding="8dp"
+        android:background="@drawable/icon_button_bg"
+        android:src="@drawable/ic_settings"
+        android:contentDescription="@string/settings"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.parachute_lemming.level.LevelView
+        android:id="@+id/level_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.50"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_settings"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.3"
+        android:layout_marginTop="16dp" />
+
+    <!--
+        Single action row directly under the level: [Zero] [Tilt readout] [Reset].
+        The readouts container lives inside this row so view-binding access stays
+        identical to portrait, and pitch_slot stays in the tree (hidden) for the same
+        reason. In edge mode pitch_slot is GONE and roll_slot expands to fill the slot.
+    -->
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/level_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_calibrate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/calibrate"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_on_amber"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/btn_primary_bg"
+            android:stateListAnimator="@null" />
+
+        <LinearLayout
+            android:id="@+id/readouts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/roll_slot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@drawable/readout_bg"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/roll_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tilt_label"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.12"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/roll_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pitch_slot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:background="@drawable/readout_bg"
+                android:padding="6dp"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/pitch_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pitch_label"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.12"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/pitch_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/reset_calibration"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_on_dark"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/btn_secondary_bg"
+            android:stateListAnimator="@null" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

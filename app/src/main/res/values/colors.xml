@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background + surfaces -->
+    <color name="bg">#121417</color>
+    <color name="bg_elev">#1B1F24</color>
+    <color name="instrument_bezel">#6B7480</color>
+    <color name="instrument_bezel_aligned">#3DDC84</color>
+    <color name="instrument_face">#DCE1E8</color>
+    <color name="instrument_face_centered">#D6E3CA</color>
+    <color name="glass_edge">#4A5260</color>
+
+    <!-- Amber bubble palette -->
+    <color name="bubble">#FFB300</color>
+    <color name="bubble_centered">#FFD24D</color>
+    <color name="bubble_edge">#7A5400</color>
+
+    <!-- Text + accents -->
+    <color name="text_primary">#F2F4F7</color>
+    <color name="text_secondary">#9AA3AD</color>
+    <color name="crosshair">#3A4148</color>
+    <color name="crosshair_centered">#FFB300</color>
+    <color name="target_ring">#3A4148</color>
+    <color name="match_mark">#3A4148</color>
+    <color name="match_mark_aligned">#FFB300</color>
+    <color name="bubble_mark">#1A1300</color>
+
+    <!-- Buttons -->
+    <color name="btn_bg">#FFB300</color>
+    <color name="btn_bg_secondary">#2A3038</color>
+    <color name="btn_text_on_amber">#1A1300</color>
+    <color name="btn_text_on_dark">#F2F4F7</color>
+</resources>

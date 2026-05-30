@@ -1,0 +1,28 @@
+# Built artifacts
+*.apk
+*.aab
+*.ap_
+build/
+**/build/
+
+# Local config (machine specific)
+local.properties
+*.iml
+.idea/
+.gradle/
+
+# Signing material — must never be committed
+*.jks
+*.keystore
+keystore.properties
+
+# OS / IDE noise
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+
+# Captures / profiling
+captures/
+.externalNativeBuild/
+.cxx/

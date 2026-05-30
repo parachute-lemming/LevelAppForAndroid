@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Level</string>
+    <string name="roll_label">Roll</string>
+    <string name="pitch_label">Pitch</string>
+    <string name="tilt_label">Tilt</string>
+    <string name="calibrate">Zero</string>
+    <string name="reset_calibration">Reset</string>
+    <string name="mode_round">Surface</string>
+    <string name="mode_torpedo">Edge</string>
+    <string name="calibration_active">Zeroed</string>
+    <string name="calibration_reset">Zero cleared</string>
+    <string name="degrees_format">%1$+.2f°</string>
+
+    <string name="settings">Settings</string>
+    <string name="settings_back">Back</string>
+    <string name="bubble_direction">Bubble direction</string>
+    <string name="invert_roll">Invert roll (left / right)</string>
+    <string name="invert_pitch">Invert pitch (up / down)</string>
+    <string name="how_to_check">How to test these</string>
+    <string name="how_to_check_body">1. Close Settings and lay the phone flat on its back on a level surface.\n\n2. Lift the RIGHT edge of the phone slightly. The bubble should slide toward the right. If it goes left instead, come back and turn on \"Invert roll\".\n\n3. Lift the TOP edge of the phone slightly (the end with the front camera). The bubble should slide toward the top of the screen. If it goes toward the bottom, come back and turn on \"Invert pitch\".\n\nThese same toggles also fix an inverted Edge-mode tilt reading.</string>
+
+    <string name="alignment_tolerance">Alignment tolerance</string>
+    <string name="alignment_tolerance_body">A guide line glows amber when the bubble is within this many degrees of level. The Pitch value also controls Edge mode.</string>
+    <string name="roll_tolerance_label">Roll</string>
+    <string name="pitch_tolerance_label">Pitch</string>
+    <string name="tolerance_format">±%1$.2f°</string>
+    <string name="dec_roll">Decrease roll tolerance</string>
+    <string name="inc_roll">Increase roll tolerance</string>
+    <string name="dec_pitch">Decrease pitch tolerance</string>
+    <string name="inc_pitch">Increase pitch tolerance</string>
+
+</resources>
